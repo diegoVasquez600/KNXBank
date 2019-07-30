@@ -103,6 +103,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/registerLastname"
                 tools:targetApi="o" />
 
+            <EditText
+                android:id="@+id/registerDNI"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:autofillHints=""
+                android:backgroundTint="@color/coloAccentDark"
+                android:ems="10"
+                android:hint="ID Numbera"
+                android:inputType="numberDecimal"
+                android:textColorHint="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="442dp"
+                tools:targetApi="o" />
+
             <TextView
                 android:id="@+id/registerDescription"
                 android:layout_width="wrap_content"
