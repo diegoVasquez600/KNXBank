@@ -19,14 +19,31 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/background_light" >
+            android:background="@android:color/darker_gray">
+
+            <EditText
+                android:id="@+id/registerFistname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/coloAccentDark"
+                android:ems="10"
+                android:hint="@string/first_names_hint"
+                android:inputType="textPersonName"
+                android:textColorHint="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerDescription"
+                android:autofillHints="" tools:targetApi="o" />
 
             <ImageView
                 android:id="@+id/knxLogo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
                 android:contentDescription="@string/knxLogo"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,16 +53,68 @@
                 tools:srcCompat="@mipmap/knxc_negro" />
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:id="@+id/titleKNX"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:text="TextView"
+                android:layout_marginEnd="70dp"
+                android:text="@string/app_title"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/knxLogo" />
+
+            <EditText
+                android:id="@+id/registerLastname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="50dp"
+                android:backgroundTint="@color/coloAccentDark"
+                android:ems="10"
+                android:hint="@string/last_names_hint"
+                android:inputType="textPersonName"
+                android:textColorHint="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerFistname"
+                android:autofillHints="" tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/registerYears"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="50dp"
+                android:autofillHints=""
+                android:backgroundTint="@color/coloAccentDark"
+                android:ems="10"
+                android:hint="@string/Years_register"
+                android:inputType="numberDecimal"
+                android:textColorHint="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registerLastname"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/registerDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/register_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleKNX" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

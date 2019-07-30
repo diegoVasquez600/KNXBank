@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">KNXBank</string>
     <string name="knxLogo">Logo</string>
+    <string name="app_title">KNXBank</string>
+    <string name="register_description">To register please fill the following Information</string>
+    <string name="first_names_hint">First Names</string>
+    <string name="last_names_hint">Last Names</string>
+    <string name="Years_register">How old are you?</string>
 </resources>
