@@ -15,6 +15,7 @@ public class utilidades {
     public static final String CAMPO_DNI="DNI";
     public static final String CAMPO_EDAD="edad";
     public static final String CAMPO_CLAVE="clave";
+    public static final String CAMPO_EMAIL="email";
     //Constantes campos cuenta
     public static final String CAMPO_SALDOACTUAL="saldoActual";
     public static final String CAMPO_MOVIMIENTO="Movimiento";
@@ -23,7 +24,7 @@ public class utilidades {
     public static final String CAMPO_SALDOENVIADO="saldoEnviado";
 
     //CREACION DE TABLAS
-    public static final String CREAR_TABLACLIENTE="CREATE TABLE"+TABLA_CLIENTE+"("+CAMPO_ID+"INTEGER,"+CAMPO_DNI+"  TEXT,"+CAMPO_CUENTABANCARIA+" TEXT,"+CAMPO_NOMBRE+"TEXT,"+CAMPO_APELLIDOS+"TEXT,"+CAMPO_EDAD+" INTEGER,"+CAMPO_CLAVE+"INTEGER)";
+    public static final String CREAR_TABLACLIENTE="CREATE TABLE"+TABLA_CLIENTE+"("+CAMPO_ID+"INTEGER,"+CAMPO_DNI+"  TEXT,"+CAMPO_CUENTABANCARIA+" TEXT,"+CAMPO_NOMBRE+"TEXT,"+CAMPO_APELLIDOS+"TEXT,"+CAMPO_EDAD+" INTEGER,"+CAMPO_CLAVE+"INTEGER,"+CAMPO_EMAIL+"TEXT)";
 
     //CREACION TABLA CUENTA
     public static final String CREAR_TABLACUENTA= "CREATE TABLE"+TABLA_CUENTA+"("+CAMPO_ID+"INTEGER,"+CAMPO_CUENTABANCARIA+" TEXT,"+CAMPO_SALDOACTUAL+"INTEGER,"+CAMPO_MOVIMIENTO+"TEXT,"+CAMPO_FECHAMOVIMIENTO+"DATE)";
