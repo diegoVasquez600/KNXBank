@@ -23,6 +23,9 @@ public class conexionsqlitehelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase knxcBankdb, int i, int i1) {
-
+        knxcBankdb.execSQL("DROP TABLE IF EXISTS cliente");
+        knxcBankdb.execSQL("DROP TABLE IF EXISTS cuenta");
+        knxcBankdb.execSQL("DROP TABLE IF EXISTS transaccion");
+        onCreate(knxcBankdb);
     }
 }
