@@ -1,4 +1,4 @@
-package com.knoxcorporation.knxbank;
+package com.knoxcorporation.knxbank.Databases;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
