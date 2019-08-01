@@ -3,13 +3,13 @@ package com.knoxcorporation.knxbank.Entidades;
 import java.util.Date;
 
 public class Transaccion {
-    private Integer ID,cuentaBancariaEnviar,cuentaBancaria,saldoEnviado;
+    private Integer ID,cuentaBancaria,cuentaBancariaRecibir,saldoEnviado;
     private Date fechaMovimiento;
 
-    public Transaccion(Integer ID, Integer cuentaBancariaEnviar, Integer cuentaBancaria, Integer saldoEnviado, Date fechaMovimiento) {
+    public Transaccion(Integer ID, Integer cuentaBancaria, Integer cuentaBancariaRecibir, Integer saldoEnviado, Date fechaMovimiento) {
         this.ID = ID;
-        this.cuentaBancariaEnviar = cuentaBancariaEnviar;
         this.cuentaBancaria = cuentaBancaria;
+        this.cuentaBancariaRecibir = cuentaBancariaRecibir;
         this.saldoEnviado = saldoEnviado;
         this.fechaMovimiento = fechaMovimiento;
     }
@@ -22,20 +22,20 @@ public class Transaccion {
         this.ID = ID;
     }
 
-    public Integer getCuentaBancariaEnviar() {
-        return cuentaBancariaEnviar;
-    }
-
-    public void setCuentaBancariaEnviar(Integer cuentaBancariaEnviar) {
-        this.cuentaBancariaEnviar = cuentaBancariaEnviar;
-    }
-
     public Integer getCuentaBancaria() {
         return cuentaBancaria;
     }
 
     public void setCuentaBancaria(Integer cuentaBancaria) {
         this.cuentaBancaria = cuentaBancaria;
+    }
+
+    public Integer getCuentaBancariaRecibir() {
+        return cuentaBancariaRecibir;
+    }
+
+    public void setCuentaBancariaRecibir(Integer cuentaBancariaRecibir) {
+        this.cuentaBancariaRecibir = cuentaBancariaRecibir;
     }
 
     public Integer getSaldoEnviado() {
