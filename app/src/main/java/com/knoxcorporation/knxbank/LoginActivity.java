@@ -8,13 +8,13 @@ import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
-import com.knoxcorporation.knxbank.Databases.conexionsqlitehelper;
+import com.knoxcorporation.knxbank.Databases.*;
 
 public class LoginActivity extends AppCompatActivity {
         EditText usuario,contrasena;
         Button btnlogin,btnregister;
         conexionsqlitehelper helper=new conexionsqlitehelper(this,"knxcBankdb",null,1);
-                ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,9 @@ public class LoginActivity extends AppCompatActivity {
                     usuario=(EditText) findViewById(R.id.registerDNI);
                     contrasena=(EditText) findViewById(R.id.registerPassword);
                     try{
+                        //Metodo en conexion para la busqueda de los registros
                         Cursor cursor= helper.Consultarusuario(usuario.getText().toString(),contrasena.getText().toString());
+                        //Validacion si registro existe
                         if(cursor.getCount()>0){
                             Intent i=new Intent(getApplicationContext(),MainActivity.class);
                             startActivity(i);
