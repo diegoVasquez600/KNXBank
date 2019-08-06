@@ -13,7 +13,7 @@ import com.knoxcorporation.knxbank.Databases.*;
 public class LoginActivity extends AppCompatActivity {
         EditText usuario,contrasena;
         Button btnlogin,btnregister;
-        conexionsqlitehelper helper=new conexionsqlitehelper(this,"knxcBankdb",null,1);
+        conexionsqlitehelper helper = new conexionsqlitehelper(this,"knxcBankdb",null,1);
 
 
     @Override
@@ -21,21 +21,21 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         //Intent de registro desde login
-            btnregister=(Button)findViewById(R.id.btnRegister);
+            btnregister = findViewById(R.id.btnRegister);
             btnregister.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(getApplicationContext(),RegisterActivity.class);
-                    startActivity(i);
+                    Intent toRegister = new Intent(getApplicationContext(),RegisterActivity.class);
+                    startActivity(toRegister);
                 }
             });
         //Button login
-            btnlogin=(Button)findViewById(R.id.btnLogin);
+            btnlogin= findViewById(R.id.btnLogin);
             btnlogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    usuario=(EditText) findViewById(R.id.registerDNI);
-                    contrasena=(EditText) findViewById(R.id.registerPassword);
+                    usuario= findViewById(R.id.registerDNI);
+                    contrasena = findViewById(R.id.registerPassword);
                     try{
                         //Metodo en conexion para la busqueda de los registros
                         Cursor cursor= helper.Consultarusuario(usuario.getText().toString(),contrasena.getText().toString());
