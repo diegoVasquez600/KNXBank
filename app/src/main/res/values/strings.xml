@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">KNXBank</string>
-    <string name="knxLogo">Logo</string>
-    <string name="app_title">KNXBank</string>
+    <string name="knxLogo" translatable="false">Logo</string>
+    <string name="app_title" translatable="false">KNXBank</string>
     <string name="register_description">To register please fill the following Information</string>
     <string name="first_names_hint">First Names</string>
     <string name="last_names_hint">Last Names</string>
@@ -15,4 +15,8 @@
     <string name="password_hint">Password</string>
     <string name="login_text">Login</string>
     <string name="Register_text">No register?, do it Here</string>
+    <string name="phoneNumberHint">Phone Number</string>
+    <string name="phoneError">A phone number is required</string>
+    <string name="phonelenght">Enter a Valid phone number with +(country code)</string>
+
 </resources>

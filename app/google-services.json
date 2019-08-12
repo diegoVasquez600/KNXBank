@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "443072425271",
+    "firebase_url": "https://knxbank.firebaseio.com",
+    "project_id": "knxbank",
+    "storage_bucket": "knxbank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443072425271:android:bacb3646dd28d320",
+        "android_client_info": {
+          "package_name": "com.knoxcorporation.knxbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443072425271-eoe7pl9rs8fm062j789dob0e9dfal2ho.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.knoxcorporation.knxbank",
+            "certificate_hash": "80c96ba52b6d2f93c6d0e601bc41d77802cb9b7c"
+          }
+        },
+        {
+          "client_id": "443072425271-kgp8vpcsubl4sq67ghb6b2vbouehpaot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdD3aAvkzeSYUUuktHa64MhKeBrGqD4Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443072425271-kgp8vpcsubl4sq67ghb6b2vbouehpaot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

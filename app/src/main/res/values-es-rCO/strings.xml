@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KNXBank</string>
+    <string name="Register_text">¿No estás registrado?, presiona aquí</string>
+    <string name="Years_register">¿Cual es tu edad?</string>
+    <string name="already_register_login_here_button">¿Ya estás registrado?, Inicia sesión</string>
+    <string name="create_password_hint">Crear Contraseña</string>
+    <string name="email_hint">Email</string>
+    <string name="first_names_hint">Nombres</string>
+    <string name="id_number_hint">Número de DNI</string>
+    <string name="last_names_hint">Apellidos</string>
+    <string name="login_description">Para Iniciar sesión llene los siguientes campos</string>
+    <string name="login_text">Iniciar sesión</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="phoneError">Un número teléfonico es requerido</string>
+    <string name="phoneNumberHint">Número Teléfonico</string>
+    <string name="phonelenght">Ingrese un número teléfonico valido con +Codigo de pais</string>
+    <string name="register_button">Registrarme</string>
+    <string name="register_description">Para registrarse por favor llene los siguiente Información</string>
+</resources>
