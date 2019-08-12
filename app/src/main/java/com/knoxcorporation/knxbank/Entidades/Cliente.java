@@ -3,50 +3,55 @@ package com.knoxcorporation.knxbank.Entidades;
 
 
 public class Cliente {
-    private Integer ID,DNI,cuentaBancaria,Edad,Clave;
-    private String Nombre,Apellidos;
+    private String ID,DNI,cuentaBancaria,Edad,Clave,telefono;
+    private String Nombre,Apellidos,correo;
 
-    public Cliente(Integer ID, Integer DNI, Integer cuentaBancaria, Integer edad, Integer clave, String nombre, String apellidos) {
-    }
-
-    public Integer getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(Integer ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
-    public Integer getDNI() {
+    public String getDNI() {
         return DNI;
     }
 
-    public void setDNI(Integer DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
-    public Integer getCuentaBancaria() {
+    public String getCuentaBancaria() {
         return cuentaBancaria;
     }
 
-    public void setCuentaBancaria(Integer cuentaBancaria) {
+    public void setCuentaBancaria(String cuentaBancaria) {
         this.cuentaBancaria = cuentaBancaria;
     }
 
-    public Integer getEdad() {
+    public String getEdad() {
         return Edad;
     }
 
-    public void setEdad(Integer edad) {
+    public void setEdad(String edad) {
         Edad = edad;
     }
 
-    public Integer getClave() {
+    public String getClave() {
         return Clave;
     }
 
-    public void setClave(Integer clave) {
+    public void setClave(String clave) {
         Clave = clave;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getNombre() {
@@ -63,5 +68,13 @@ public class Cliente {
 
     public void setApellidos(String apellidos) {
         Apellidos = apellidos;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 }
