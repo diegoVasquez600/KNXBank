@@ -7,13 +7,6 @@ public class Cliente {
     private String Nombre,Apellidos;
 
     public Cliente(Integer ID, Integer DNI, Integer cuentaBancaria, Integer edad, Integer clave, String nombre, String apellidos) {
-        this.ID = ID;
-        this.DNI = DNI;
-        this.cuentaBancaria = cuentaBancaria;
-        Edad = edad;
-        Clave = clave;
-        Nombre = nombre;
-        Apellidos = apellidos;
     }
 
     public Integer getID() {

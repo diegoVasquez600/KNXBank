@@ -7,11 +7,6 @@ public class Cuenta {
     private Date fechaMovimiento;
 
     public Cuenta(Integer ID, Integer cuentaBancaria, Integer saldoActual, Integer movimiento, Date fechaMovimiento) {
-        this.ID = ID;
-        this.cuentaBancaria = cuentaBancaria;
-        this.saldoActual = saldoActual;
-        Movimiento = movimiento;
-        this.fechaMovimiento = fechaMovimiento;
     }
 
     public Integer getID() {

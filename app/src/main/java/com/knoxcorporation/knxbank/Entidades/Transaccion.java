@@ -7,11 +7,6 @@ public class Transaccion {
     private Date fechaMovimiento;
 
     public Transaccion(Integer ID, Integer cuentaBancaria, Integer cuentaBancariaRecibir, Integer saldoEnviado, Date fechaMovimiento) {
-        this.ID = ID;
-        this.cuentaBancaria = cuentaBancaria;
-        this.cuentaBancariaRecibir = cuentaBancariaRecibir;
-        this.saldoEnviado = saldoEnviado;
-        this.fechaMovimiento = fechaMovimiento;
     }
 
     public Integer getID() {
