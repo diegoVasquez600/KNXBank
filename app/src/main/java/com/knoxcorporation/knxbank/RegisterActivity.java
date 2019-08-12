@@ -41,8 +41,11 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: Register user information and phone auth verification
+                //TODO: Register User information and phone auth verification
+                //TODO: Register User information in the database
                 verifyPhoneNumber();
+                //Intent to VerificationActivity
+
             }
         });
         toLoginButton.setOnClickListener(new View.OnClickListener() {
