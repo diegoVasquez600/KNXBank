@@ -3,8 +3,6 @@ package com.knoxcorporation.knxbank;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.SQLException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
@@ -13,16 +11,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
         EditText usuario,contrasena;
-        Button btnlogin,btnregister;
+        Button buttonLogin, buttonToRegister;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        //Intent de registro desde login
-        btnregister = findViewById(R.id.btnRegister);
-        btnregister.setOnClickListener(new View.OnClickListener() {
+        buttonToRegister = findViewById(R.id.btnRegister);
+        buttonToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent toRegister = new Intent(getApplicationContext(), RegisterActivity.class);
@@ -30,8 +26,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         //Button login
-        btnlogin = findViewById(R.id.btnLogin);
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        buttonLogin = findViewById(R.id.btnLogin);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 usuario = findViewById(R.id.registerDNI);
