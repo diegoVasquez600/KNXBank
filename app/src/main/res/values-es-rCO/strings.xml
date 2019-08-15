@@ -17,4 +17,8 @@
     <string name="phonelenght">Ingrese un número teléfonico valido con +Codigo de pais</string>
     <string name="register_button">Registrarme</string>
     <string name="register_description">Para registrarse por favor llene los siguiente Información</string>
+    <string name="verificationCodeHint">Código de Verificación</string>
+    <string name="verificationDescription">Hemos enviado un código de verificación a su telefóno</string>
+    <string name="codeVerification">Ingrese un código Válido</string>
+    <string name="verifyCodeButton">Verificar código</string>
 </resources>
