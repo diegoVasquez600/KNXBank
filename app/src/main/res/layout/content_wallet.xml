@@ -13,27 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:src="@mipmap/register_background"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/campoNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:text="Nombre Completo"
             android:textColor="@android:color/black"
@@ -42,7 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <FrameLayout
             android:id="@+id/frameCurrent"
@@ -108,31 +93,93 @@
             android:layout_height="68dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/generalText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
             <FrameLayout
                 android:layout_width="160dp"
                 android:layout_height="68dp"
                 android:layout_gravity="start"
-                android:layout_margin="5dp">
+                android:layout_margin="5dp"
+                android:background="@drawable/transactions_rounded">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:layout_width="152dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/receivedMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0 USD"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/ReceivedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Received"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
             </FrameLayout>
 
             <FrameLayout
                 android:layout_width="160dp"
                 android:layout_height="68dp"
                 android:layout_gravity="end"
-                android:layout_marginLeft="10dp">
+                android:layout_marginStart="10dp"
+                android:background="@drawable/transactions_rounded_sent">
 
+                <LinearLayout
+                    android:layout_width="152dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sentMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0 USD"
+                        android:textColor="@android:color/white"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/SentText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sent"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
             </FrameLayout>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/generalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="GENERAL"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="301dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
