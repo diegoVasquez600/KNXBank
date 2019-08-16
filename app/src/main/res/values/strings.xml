@@ -23,5 +23,6 @@
     <string name="verifyCodeButton">Verify code</string>
     <string name="title_activity_wallet" translatable="false">WalletActivity</string>
     <string name="codeVerification">Enter a valid Code</string>
+    <string name="thisMonthText">This month</string>
 
 </resources>

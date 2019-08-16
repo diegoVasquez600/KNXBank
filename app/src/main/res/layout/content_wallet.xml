@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_light"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".WalletActivity"
     tools:showIn="@layout/activity_wallet">
@@ -12,20 +13,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:src="@mipmap/register_background"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/campoNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:text="Nombre Completo"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
         <FrameLayout
             android:id="@+id/frameCurrent"
@@ -36,10 +53,11 @@
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/campoNombre">
+            app:layout_constraintTop_toBottomOf="@+id/campoNombre"
+            android:background="">
 
             <LinearLayout
-                android:id="@+id/currentBalance"
+                android:id="@+id/currentBalanceLayout"
                 android:layout_width="312dp"
                 android:layout_height="79dp"
                 android:layout_gravity="center"
@@ -47,13 +65,74 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/currentBalance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@android:color/background_dark" />
+                    android:layout_marginTop="8dp"
+                    android:text="0 USD"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/currentBalanceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Current Balance"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/secondary_text_light"
+                    android:textSize="18sp" />
+
             </LinearLayout>
         </FrameLayout>
+
+        <TextView
+            android:id="@+id/thisMonthText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="60dp"
+            android:text="@string/thisMonthText"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameCurrent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="68dp"
+                android:layout_gravity="start"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="68dp"
+                android:layout_gravity="end"
+                android:layout_marginLeft="10dp">
+
+            </FrameLayout>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
