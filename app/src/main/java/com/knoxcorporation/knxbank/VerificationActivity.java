@@ -39,7 +39,7 @@ public class VerificationActivity extends AppCompatActivity {
         verificationCode.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
         sendVerificationCode(phoneNumber);
-        buttonVerify.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.buttonVerify).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String code = verificationCode.getText().toString().trim();

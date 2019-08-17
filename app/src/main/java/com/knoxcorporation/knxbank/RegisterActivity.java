@@ -96,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         //phoneNumber
         String numberPhone = "+" + code + phone;
+        Toast.makeText(getApplicationContext(),"Agregado correctamente",Toast.LENGTH_LONG).show();
         //Intent to VerificationActivity
         Intent toVerify = new Intent(getApplicationContext(), VerificationActivity.class);
         toVerify.putExtra("phoneNumber", numberPhone);
@@ -117,7 +118,6 @@ public class RegisterActivity extends AppCompatActivity {
         user.setTelefono(telefono);
         user.setCorreo(correo);
         databasereference.child("Cliente").child(user.getID()).setValue(user);
-        Toast.makeText(getApplicationContext(),"Agregado correctamente",Toast.LENGTH_LONG).show();
     }
 
     //Realtime Database Method()

@@ -10,29 +10,20 @@ import android.widget.*;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-        EditText usuario,contrasena;
-        Button buttonLogin, buttonToRegister;
+       EditText loginPhoneNumber, loginPassword;
+       Button buttonLogin, buttonToRegister;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        buttonToRegister = findViewById(R.id.btnRegister);
         buttonToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Intent to RegisterActivity
                 Intent toRegister = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(toRegister);
-            }
-        });
-        //Button login
-        buttonLogin = findViewById(R.id.btnLogin);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                usuario = findViewById(R.id.registerDNI);
-                contrasena = findViewById(R.id.registerPassword);
-
+                finish();
             }
         });
 
