@@ -106,9 +106,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     //Method register
     private void register() {
-        String Nombre=names.getText().toString(),Apellido=lastNames.getText().toString(),Edad=age.getText().toString(),DNI=idNumber.getText().toString(),
-                pass=password.getText().toString(),telefono=phoneNumber.getText().toString(),correo=email.getText().toString();
-        Cliente user= new Cliente();
+        String Nombre = names.getText().toString(),Apellido = lastNames.getText().toString(),Edad = age.getText().toString(),DNI = idNumber.getText().toString(),
+                pass = password.getText().toString(),telefono = phoneNumber.getText().toString(),correo = email.getText().toString();
+        Cliente user = new Cliente();
         user.setID(UUID.randomUUID().toString());
         user.setNombre(Nombre);
         user.setApellidos(Apellido);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
+    android:background="#FFFFFF"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".WalletActivity"
     tools:showIn="@layout/activity_wallet">
@@ -36,6 +36,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/campoNombre">
@@ -46,6 +48,8 @@
                 android:layout_height="79dp"
                 android:layout_gravity="center"
                 android:background="@drawable/current_balance_rounded"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical">
 
                 <TextView
@@ -63,7 +67,7 @@
                     android:id="@+id/currentBalanceText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Current Balance"
+                    android:text="@string/currentBalanceText"
                     android:textAlignment="center"
                     android:textColor="@android:color/secondary_text_light"
                     android:textSize="18sp" />
@@ -75,9 +79,9 @@
             android:id="@+id/thisMonthText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginEnd="50dp"
             android:text="@string/thisMonthText"
             android:textAlignment="textEnd"
             android:textColor="@android:color/primary_text_light"
@@ -88,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/frameCurrent" />
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/marco"
             android:layout_width="0dp"
             android:layout_height="68dp"
             android:layout_marginStart="32dp"
@@ -103,14 +107,18 @@
                 android:layout_width="160dp"
                 android:layout_height="68dp"
                 android:layout_gravity="start"
-                android:layout_margin="5dp">
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/transaction">
 
                 <LinearLayout
                     android:layout_width="152dp"
                     android:layout_height="58dp"
                     android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/transactions_rounded">
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/receivedMoney"
@@ -125,7 +133,7 @@
                         android:id="@+id/ReceivedText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Received"
+                        android:text="@string/receivedText"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="18sp" />
@@ -136,14 +144,18 @@
                 android:layout_width="160dp"
                 android:layout_height="68dp"
                 android:layout_gravity="end"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/transaction_sent">
 
                 <LinearLayout
                     android:layout_width="152dp"
                     android:layout_height="58dp"
                     android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/transactions_rounded_sent">
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/sentMoney"
@@ -158,7 +170,7 @@
                         android:id="@+id/SentText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sent"
+                        android:text="@string/sentText"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="18sp" />
@@ -173,14 +185,143 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="32dp"
-            android:text="GENERAL"
+            android:text="@string/generalText"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/marco" />
+
+        <FrameLayout
+            android:id="@+id/frameGeneral"
+            android:layout_width="0dp"
+            android:layout_height="161dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#EDFFFFFF"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/generalText"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_person_black_24dp"
+                    android:layout_margin="5dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Personal Details"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="normal"
+                    android:layout_margin="5dp"/>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_chevron_right_black_24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_account_details"
+                    android:layout_margin="5dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Account Details"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="normal"
+                    android:layout_margin="5dp"/>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_chevron_right_black_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_group"
+                    android:layout_margin="5dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Personal Details"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="normal"
+                    android:layout_margin="5dp"/>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_chevron_right_black_24dp" />
+            </LinearLayout>
+        </FrameLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

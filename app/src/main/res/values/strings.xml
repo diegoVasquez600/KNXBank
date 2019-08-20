@@ -24,5 +24,9 @@
     <string name="title_activity_wallet" translatable="false">WalletActivity</string>
     <string name="codeVerification">Enter a valid Code</string>
     <string name="thisMonthText">This month</string>
+    <string name="receivedText">Received</string>
+    <string name="currentBalanceText">Current Balance</string>
+    <string name="sentText">Sent</string>
+    <string name="generalText">GENERAL</string>
 
 </resources>
