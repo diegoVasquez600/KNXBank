@@ -1,5 +1,6 @@
 package com.knoxcorporation.knxbank;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,21 +8,30 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.knoxcorporation.knxbank.Adapters.CountryData;
+import com.knoxcorporation.knxbank.Entidades.Cliente;
 
 public class LoginActivity extends AppCompatActivity {
        EditText loginPhoneNumber, loginPassword;
-       Spinner countryName;
+       Spinner country;
        Button buttonLogin, buttonToRegister;
+    DatabaseReference databasereference;
+    FirebaseDatabase firebaseDatabase;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        countryName = findViewById(R.id.countryCode);
-        countryName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
+        country =(Spinner) findViewById(R.id.spinnerCode);
+        country.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
         buttonToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,34 +44,91 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               String areaCode = CountryData.countryAreaCodes[countryName.getSelectedItemPosition()];
-               String phone = "+" +areaCode+ LoginActivity.this.loginPhoneNumber.getText().toString();
-                //Conditional if phone is empty
-                String phoneError = getResources().getString(R.string.phoneError);
-                String phonelength = getResources().getString(R.string.phonelenght);
-                if (phone.isEmpty()){
-                    LoginActivity.this.loginPhoneNumber.setError(phoneError);
-                    loginPhoneNumber.requestFocus();
-                    return;
-                }if (phone.length() < 10){
-                    loginPhoneNumber.setError(phonelength);
-                    loginPhoneNumber.requestFocus();
-                    return;
-                }
-                String password = loginPassword.getText().toString();
-                if (password.isEmpty()){
-                    loginPassword.setError("Error");
-                    loginPassword.requestFocus();
-                    return;
-                }
+                verificaciontel();
                 //TODO: Get password from Firebase and validate if is correct
                 //If password and number validations are correct Intent to VerificationActivity
-                Intent toVerification = new Intent(getApplicationContext(), VerificationActivity.class);
-                toVerification.putExtra("phoneNumber", phone);
-                startActivity(toVerification);
-                finish();
+
             }
         });
+    }
+
+    private void loginfirebase() {
+       final String areaCode = CountryData.countryAreaCodes[country.getSelectedItemPosition()];
+       final String phone = "+" +areaCode+ LoginActivity.this.loginPhoneNumber.getText().toString();
+       final String password = loginPassword.getText().toString();
+       final String[] model = new String[1];
+
+        //validacion telefono firebase
+        initializeFirebase();
+        databasereference.orderByChild("Cliente").equalTo(phone).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot child: dataSnapshot.getChildren()){
+                    Cliente model=child.getValue(Cliente.class);
+                    if (model.equals(phone)){
+                        databasereference.orderByChild("Cliente").equalTo(password).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot child: dataSnapshot.getChildren()){
+                                    Cliente model=child.getValue(Cliente.class);
+                                    if (model.equals(password)){
+                                        Intent toVerification = new Intent(getApplicationContext(), VerificationActivity.class);
+                                        toVerification.putExtra("phoneNumber", phone);
+                                        startActivity(toVerification);
+                                        finish();
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
+    private void initializeFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = firebaseDatabase.getInstance();
+        databasereference = firebaseDatabase.getReference();
+
+    }
+
+    private void verificaciontel() {
+        String areaCode = CountryData.countryAreaCodes[country.getSelectedItemPosition()];
+        String phone = "+" +areaCode+ LoginActivity.this.loginPhoneNumber.getText().toString();
+        //Conditional if phone is empty
+        String phoneError = getResources().getString(R.string.phoneError);
+        String phonelength = getResources().getString(R.string.phonelenght);
+        if (phone.isEmpty()){
+            LoginActivity.this.loginPhoneNumber.setError(phoneError);
+            loginPhoneNumber.requestFocus();
+            return;
+        }if (phone.length() < 10){
+            loginPhoneNumber.setError(phonelength);
+            loginPhoneNumber.requestFocus();
+            return;
+        }
+        String password = loginPassword.getText().toString();
+        if (password.isEmpty()){
+            loginPassword.setError("Error");
+            loginPassword.requestFocus();
+            return;
+        }else{
+            loginfirebase();
+        }
+
     }
 
     @Override

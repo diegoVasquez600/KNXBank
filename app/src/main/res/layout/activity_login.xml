@@ -81,7 +81,7 @@
                 tools:targetApi="o" />
 
             <Spinner
-                android:id="@+id/countryCode"
+                android:id="@+id/spinnerCode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
