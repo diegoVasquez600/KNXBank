@@ -12,7 +12,7 @@ import com.knoxcorporation.knxbank.Adapters.CountryData;
 
 public class LoginActivity extends AppCompatActivity {
        EditText loginPhoneNumber, loginPassword;
-       Spinner countryCodes;
+       Spinner countryName;
        Button buttonLogin, buttonToRegister;
 
 
@@ -20,8 +20,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        countryCodes = findViewById(R.id.countryCode);
-        countryCodes.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
+        countryName = findViewById(R.id.countryCode);
+        countryName.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
         buttonToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               String areaCode = CountryData.countryAreaCodes[countryCodes.getSelectedItemPosition()];
+               String areaCode = CountryData.countryAreaCodes[countryName.getSelectedItemPosition()];
                String phone = "+" +areaCode+ LoginActivity.this.loginPhoneNumber.getText().toString();
                 //Conditional if phone is empty
                 String phoneError = getResources().getString(R.string.phoneError);
@@ -46,6 +46,12 @@ public class LoginActivity extends AppCompatActivity {
                 }if (phone.length() < 10){
                     loginPhoneNumber.setError(phonelength);
                     loginPhoneNumber.requestFocus();
+                    return;
+                }
+                String password = loginPassword.getText().toString();
+                if (password.isEmpty()){
+                    loginPassword.setError("Error");
+                    loginPassword.requestFocus();
                     return;
                 }
                 //TODO: Get password from Firebase and validate if is correct

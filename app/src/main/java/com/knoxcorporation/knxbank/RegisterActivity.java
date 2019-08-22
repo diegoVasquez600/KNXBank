@@ -128,6 +128,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            Intent toWallet = new Intent(getApplicationContext(), WalletActivity.class);
+            //Kill all other Activities by D'V
+            toWallet.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(toWallet);
+        }
+    }
 
 }
