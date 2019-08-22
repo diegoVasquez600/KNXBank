@@ -56,17 +56,14 @@ public class WalletActivity extends AppCompatActivity {
         phone=getIntent().getExtras();
         final String user=phone.getString("phoneNumber");
         initializeFirebase();
-        databasereference.orderByChild("Cliente").equalTo(user).addValueEventListener(new ValueEventListener() {
+        databasereference.child("Cliente").equalTo(user).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot child:dataSnapshot.getChildren()){
                     Cliente model=child.getValue(Cliente.class);
-
                     if (model.equals(user)){
-                        Cliente client=new Cliente();
-                        String Name=client.setNombre("");
-
-
+                        String nombre=dataSnapshot.child("nombre").getValue().toString();
+                        Name.setText(nombre);
                     }
 
                 }
