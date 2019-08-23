@@ -21,4 +21,14 @@
     <string name="verificationDescription">Hemos enviado un código de verificación a su telefóno</string>
     <string name="codeVerification">Ingrese un código Válido</string>
     <string name="verifyCodeButton">Verificar código</string>
+    <string name="app_info">Información</string>
+    <string name="generalText">General</string>
+    <string name="currentBalanceText">Saldo Actual</string>
+    <string name="receivedText">Recibido</string>
+    <string name="sentText">Enviado</string>
+    <string name="thisMonthText">Éste mes</string>
+    <string name="otherText">Otros</string>
+    <string name="notifications">Notificationes</string>
+    <string name="password">Contraseña</string>
+    <string name="newAccDescription">Completa los siguientes campos, para abrir la cuenta</string>
 </resources>

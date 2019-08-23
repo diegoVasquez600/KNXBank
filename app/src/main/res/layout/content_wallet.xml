@@ -206,13 +206,14 @@
                     android:layout_height="match_parent"
                     android:background="@android:color/white"
                     android:src="@drawable/ic_person_black_24dp"
-                    android:layout_margin="5dp"/>
+                    android:layout_margin="5dp"
+                    android:contentDescription="TODO" />
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Personal Details"
+                    android:text="@string/personal_details"
                     android:textSize="18sp"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"
@@ -221,7 +222,7 @@
                     android:layout_margin="5dp"/>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
@@ -250,7 +251,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Account Details"
+                    android:text="@string/account_details"
                     android:textSize="18sp"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"
@@ -259,7 +260,7 @@
                     android:layout_margin="5dp"/>
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
 
@@ -287,7 +288,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Friends"
+                    android:text="@string/friends"
                     android:textSize="18sp"
                     android:textColor="@android:color/black"
                     android:layout_gravity="center"
@@ -316,7 +317,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:text="Other"
+            android:text="@string/otherText"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -382,11 +383,12 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/logOutButton"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:background="@android:color/white"
-                    android:src="@drawable/ic_notifications" />
+                    android:src="@drawable/ic_logout" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -394,10 +396,11 @@
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:gravity="center"
-                    android:text="@string/notifications"
+                    android:text="@string/logout"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="normal" />
+
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -424,7 +427,7 @@
                     android:src="@drawable/ic_password" />
 
                 <Space
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
                 <ImageButton
@@ -469,7 +472,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="end"
                     android:background="@android:color/white"
-                    android:src="@drawable/ic_chevron_right_black_24dp" />
+                    android:src="@drawable/ic_chevron_right_black_24dp"
+                    android:contentDescription="TODO" />
 
             </LinearLayout>
         </FrameLayout>

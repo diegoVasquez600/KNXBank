@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".NewAccountActivity">
 
+    <ImageView
+        android:id="@+id/knxLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/knxLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/knxc_negro"
+        tools:srcCompat="@mipmap/knxc_negro" />
+
+    <TextView
+        android:id="@+id/titleKNX"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="70dp"
+        android:text="@string/app_title"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/knxLogo" />
+
+    <TextView
+        android:id="@+id/newAccountDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/newAccDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleKNX" />
+
+    <Spinner
+        android:id="@+id/spinnerCountryData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newAccountDescription" />
+
+    <EditText
+        android:id="@+id/accountNumberPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:backgroundTint="@color/colorAccent"
+        android:ems="10"
+        android:hint="@string/phoneNumberHint"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinnerCountryData"
+        app:layout_constraintTop_toBottomOf="@+id/newAccountDescription"
+        tools:targetApi="o" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
     <string name="phoneNumberHint">Phone Number</string>
     <string name="phoneError">A phone number is required</string>
     <string name="phonelenght">Enter a Valid phone number with +(country code)</string>
-    <string name="verificationDescription">A varification code has been sent to your phone</string>
+    <string name="verificationDescription">A verification code has been sent to your phone</string>
     <string name="verificationCodeHint">Verification code</string>
     <string name="verifyCodeButton">Verify code</string>
     <string name="title_activity_wallet" translatable="false">WalletActivity</string>
@@ -31,5 +31,12 @@
     <string name="app_info">App Info</string>
     <string name="notifications">Notifications</string>
     <string name="password">Password</string>
+    <string name="otherText">Other</string>
+    <string name="newAccDescription">To open the Account fill this information</string>
+    <string name="account_details">Account Details</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="friends">Friends</string>
+    <string name="logout">Logout</string>
+    <string name="WelcomeMessage">Welcome to KNXBank</string>
 
 </resources>

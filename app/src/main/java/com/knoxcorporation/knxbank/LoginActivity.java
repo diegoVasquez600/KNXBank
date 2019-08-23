@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.*;
 import android.widget.*;
 
 import com.google.firebase.FirebaseApp;
@@ -21,7 +21,7 @@ import com.knoxcorporation.knxbank.Entidades.Cliente;
 public class LoginActivity extends AppCompatActivity {
        EditText loginPhoneNumber, loginPassword;
        Spinner country;
-       Button buttonLogin, buttonToRegister;
+   // private Button buttonLogin, buttonToRegister;
     DatabaseReference databasereference;
     FirebaseDatabase firebaseDatabase;
 
@@ -30,9 +30,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        country =(Spinner) findViewById(R.id.spinnerCode);
-        country.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
-        buttonToRegister.setOnClickListener(new View.OnClickListener() {
+        /*country =(Spinner) findViewById(R.id.spinnerCode);
+        country.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, CountryData.countryNames));
+         */
+        findViewById(R.id.buttonToRegister).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Intent to RegisterActivity
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+       findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 verificaciontel();

@@ -124,7 +124,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.465"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword"
+                android:focusable="true" />
 
             <Button
                 android:id="@+id/buttonToRegister"
@@ -141,7 +142,8 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-                app:layout_constraintVertical_bias="0.01" />
+                app:layout_constraintVertical_bias="0.01"
+                android:focusable="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
