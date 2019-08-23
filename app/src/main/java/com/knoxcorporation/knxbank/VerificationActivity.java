@@ -68,6 +68,8 @@ public class VerificationActivity extends AppCompatActivity {
                             //DONE: WalletActivity by D'V
                             //TODO: Intent to Wallet
                             Intent toWallet = new Intent(getApplicationContext(), WalletActivity.class);
+                            String phoneNumber = getIntent().getStringExtra("phoneNumber");
+                            toWallet.putExtra("phoneNumber", phoneNumber);
                             //Kill all other Activities by D'V
                             toWallet.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(toWallet);

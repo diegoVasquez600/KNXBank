@@ -28,5 +28,8 @@
     <string name="currentBalanceText">Current Balance</string>
     <string name="sentText">Sent</string>
     <string name="generalText">GENERAL</string>
+    <string name="app_info">App Info</string>
+    <string name="notifications">Notifications</string>
+    <string name="password">Password</string>
 
 </resources>
